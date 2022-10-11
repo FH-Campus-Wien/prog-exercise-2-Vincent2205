@@ -5,8 +5,38 @@ import java.util.Scanner;
 public class App {
 
     //todo Task 1
-    public void largestNumber(){
-        // input your solution here
+    public void largestNumber()
+    {
+        double biggestNumber = 0;
+        double number;
+
+        System.out.print("Number 1: ");
+        Scanner scanner = new Scanner(System.in);
+        number = scanner.nextDouble();
+
+        if (number < 0)
+        {
+            System.out.println("No number entered.");
+            return;
+        }
+
+
+        for(int i = 2;; i++)
+        {
+            if(number > biggestNumber)
+            {
+                biggestNumber = number;
+            }
+            if (number <= 0)
+            {
+                System.out.printf("The largest number is %.2f", biggestNumber);
+                System.out.println();
+                return;
+            }
+
+            System.out.printf("Number %d: ", i);
+            number = scanner.nextDouble();
+        }
     }
 
     //todo Task 2
